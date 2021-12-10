@@ -141,13 +141,13 @@ public class Principal {
 					switch (cat) {
 						
 					case 0:
-						System.out.println("Valor total da receita pela categoria Salário " + c.somaPorCatReceita("Salário"));
+						System.out.println("Valor total da receita pela categoria SALÁRIO R$" + c.somaPorCatReceita("Salário"));
 						break;
 					case 1:
-						System.out.println("Valor total da receita pela categoria Variável " + c.somaPorCatReceita("Variável"));
+						System.out.println("Valor total da receita pela categoria VARIÁVEL R$" + c.somaPorCatReceita("Variável"));
 						break;
 					default:
-						System.out.println("Valor total da receita pela categoria Outro " + c.somaPorCatReceita("Outro"));
+						System.out.println("Valor total da receita pela categoria OUTRO R$" + c.somaPorCatReceita("Outro"));
 						break;
 					}
 					
@@ -198,8 +198,8 @@ public class Principal {
 								break;
 							}
 							
-							
-						}if(od == 2) {
+						}	
+					}if(od == 2) {
 							System.out.println("\nSelecione o catergoria da despesa:");
 							System.out.println("\n0 - Alimentação 1 - Transporte 2 - Lazer 3 - Mensalidade 4 - Vestuário 5 - Saúde 6 - Moradia 7 - Outro");
 							int cat = input.nextInt();
@@ -207,41 +207,46 @@ public class Principal {
 							switch (cat) {
 								
 							case 0:
-								System.out.println("Valor total da despesa pela categoria Alimentação " + c.somaPorCatDespesa("Alimentação"));
+								System.out.println("Valor total da despesa pela categoria ALIMENTAÇÃO R$ " + c.somaPorCatDespesa("Alimentação"));
 								break;
 							case 1:
-								System.out.println("Valor total da despesa pela categoria Transporte " + c.somaPorCatDespesa("Transporte"));
+								System.out.println("Valor total da despesa pela categoria TRANSPORTE R$ " + c.somaPorCatDespesa("Transporte"));
 								break;
 							case 2:
-								System.out.println("Valor total da despesa pela categoria Lazer " + c.somaPorCatDespesa("Lazer"));
+								System.out.println("Valor total da despesa pela categoria LAZER R$ " + c.somaPorCatDespesa("Lazer"));
 								break;
 							case 3:
-								System.out.println("Valor total da despesa pela categoria Mensalidade " + c.somaPorCatDespesa("Mensalidade"));
+								System.out.println("Valor total da despesa pela categoria MENSALIDADE R$ " + c.somaPorCatDespesa("Mensalidade"));
 								break;
 							case 4: 
-								System.out.println("Valor total da despesa pela categoria Vestuário " + c.somaPorCatDespesa("Vestuário"));
+								System.out.println("Valor total da despesa pela categoria VESTUÁRIO R$ " + c.somaPorCatDespesa("Vestuário"));
 								break;
 							case 5:
-								System.out.println("Valor total da despesa pela categoria Saúde " + c.somaPorCatDespesa("Saúde"));
+								System.out.println("Valor total da despesa pela categoria SAÚDE R$ " + c.somaPorCatDespesa("Saúde"));
 								break;
 							case 6:
-								System.out.println("Valor total da despesa pela categoria Moradia " + c.somaPorCatDespesa("Moradia"));
+								System.out.println("Valor total da despesa pela categoria MORADIA R$ " + c.somaPorCatDespesa("Moradia"));
 								break;
 							default:
-								System.out.println("Valor total da despesa pela categoria Outro " + c.somaPorCatDespesa("Outro"));
+								System.out.println("Valor total da despesa pela categoria OUTRO R$ " + c.somaPorCatDespesa("Outro"));
 								break;
 							}
 							
 						}
 							
 							
-					}
+					
 						
 				}	
 			
 			//--------------- ok -------
-			
-			
+			else {
+				
+				
+				
+				
+				
+			}
 			
 			
 		}
