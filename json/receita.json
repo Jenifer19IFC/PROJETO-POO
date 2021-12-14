@@ -1,1 +1,1 @@
-[{"valor":200.0,"data":"12-02-2021","tipoReceita":{"categoria":"Variável"}},{"valor":10.0,"data":"12-08-2021","tipoReceita":{"categoria":"Outro"}}]
+[{"idReceita":1,"valor":200.0,"data":"23-32-32","tipoReceita":{"categoria":"Variável"}},{"idReceita":2,"valor":300.0,"data":"21","tipoReceita":{"categoria":"Outro"}},{"idReceita":3,"valor":83.0,"data":"23","tipoReceita":{"categoria":"Variável"}}]

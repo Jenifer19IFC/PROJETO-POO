@@ -2,6 +2,7 @@ import java.sql.Date;
 
 public class Receita {
 	
+	private int idReceita;
 	private double valor;
 	private String data;
 	protected TipoReceita tipoReceita;
@@ -29,10 +30,20 @@ public class Receita {
 	public void setTipoReceita(TipoReceita tipoReceita) {
 		this.tipoReceita = tipoReceita;
 	}
+	
+	
+	public int getIdReceita() {
+		return idReceita;
+	}
+	public void setIdReceita(int idReceita) {
+		this.idReceita = idReceita;
+	}
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Receita [valor=");
+		builder.append("Receita [idReceita=");
+		builder.append(idReceita);
+		builder.append(", valor=");
 		builder.append(valor);
 		builder.append(", data=");
 		builder.append(data);
@@ -43,6 +54,7 @@ public class Receita {
 		builder.append("]");
 		return builder.toString();
 	}
+	
 	
 	
 		

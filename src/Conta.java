@@ -1,13 +1,18 @@
 public class Conta {
 	
+	private int idConta;
 	private double saldo;
 	protected Usuario usuario;
 	private ListReceita lr;
 	private ListDespesa ld;
+	private ListUsuario lu;
+	private ListConta cl;
 	
 	public Conta() {	
 		lr = new ListReceita();
 		ld = new ListDespesa();
+		lu = new ListUsuario();
+		cl = new ListConta();
 	}
 	
 	public double getSaldo() {
@@ -38,6 +43,22 @@ public class Conta {
 	public void setLd(ListDespesa ld) {
 		this.ld = ld;
 	}
+	
+	public ListUsuario getLu() {
+		return lu;
+	}
+
+	public void setLu(ListUsuario lu) {
+		this.lu = lu;
+	}
+
+	public int getIdConta() {
+		return idConta;
+	}
+
+	public void setIdConta(int idConta) {
+		this.idConta = idConta;
+	}
 
 	public void atualizaSaldo() {
 		for(int i = 0; i < ld.getLista().size(); i++) {
@@ -67,17 +88,50 @@ public class Conta {
 		}
 		return soma;
 	}
-		
+
+	public void pesquisaConta(int id) {
+        if ( cl != null) {
+            boolean achou = false;
+            for(int i = 0; i < cl.getLista().size(); i++) {
+                if (cl.getLista().get(i).getIdConta() == id) {
+                    cl.getLista().get(i);
+                    achou = true;
+                    System.out.println(cl.getLista().get(i));
+                    
+                }
+            }
+            if (!achou) {
+                System.out.println("Codigo nao encontrado! ");
+            }
+
+        } else {
+            System.out.println("Lista vazia");
+        }
+    }
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Conta [saldo=");
+		builder.append("Conta [idConta=");
+		builder.append(idConta);
+		builder.append(", saldo=");
 		builder.append(saldo);
 		builder.append(", usuario=");
 		builder.append(usuario);
+		builder.append(", lr=");
+		builder.append(lr);
+		builder.append(", ld=");
+		builder.append(ld);
+		builder.append(", lu=");
+		builder.append(lu);
+		builder.append(", toString()=");
+		builder.append(super.toString());
 		builder.append("]");
 		return builder.toString();
 	}
+
+	
+		
+	
 	
 
 	

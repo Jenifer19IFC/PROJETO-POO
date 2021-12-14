@@ -21,7 +21,7 @@ public class Endereco {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Endereco [rua=");
+		builder.append("Endereco [bairro=");
 		builder.append(bairro);
 		builder.append(", cidade=");
 		builder.append(cidade);

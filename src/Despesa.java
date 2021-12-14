@@ -2,6 +2,7 @@ import java.sql.Date;
 
 public class Despesa {
 	
+	private int idDespesa;
 	private double valor;
 	private String data;
 	protected TipoDespesa tipoDespesa;
@@ -28,10 +29,19 @@ public class Despesa {
 	public void setTipoDespesa(TipoDespesa tipoDespesa) {
 		this.tipoDespesa = tipoDespesa;
 	}
+	
+	public int getIdDespesa() {
+		return idDespesa;
+	}
+	public void setIdDespesa(int idDespesa) {
+		this.idDespesa = idDespesa;
+	}
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Despesa [valor=");
+		builder.append("Despesa [idDespesa=");
+		builder.append(idDespesa);
+		builder.append(", valor=");
 		builder.append(valor);
 		builder.append(", data=");
 		builder.append(data);
@@ -42,6 +52,8 @@ public class Despesa {
 		builder.append("]");
 		return builder.toString();
 	}
+	
+	
 	
 	
 	

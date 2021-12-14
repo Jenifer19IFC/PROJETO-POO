@@ -1,5 +1,6 @@
 public class Usuario {
 
+		private int idUsuario;
 		private String nome;
 		private String cpf;
 		protected Endereco endereco;
@@ -26,10 +27,18 @@ public class Usuario {
 		public void setEndereco(Endereco endereco) {
 			this.endereco = endereco;
 		}
+		public int getIdUsuario() {
+			return idUsuario;
+		}
+		public void setIdUsuario(int idUsuario) {
+			this.idUsuario = idUsuario;
+		}
 		@Override
 		public String toString() {
 			StringBuilder builder = new StringBuilder();
-			builder.append("Usuario [nome=");
+			builder.append("Usuario [idUsuario=");
+			builder.append(idUsuario);
+			builder.append(", nome=");
 			builder.append(nome);
 			builder.append(", cpf=");
 			builder.append(cpf);
@@ -39,7 +48,12 @@ public class Usuario {
 			builder.append(super.toString());
 			builder.append("]");
 			return builder.toString();
-	}
+		}
+		
+		
+		
+		
+		
 
 }
 

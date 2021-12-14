@@ -6,6 +6,9 @@ public class Principal {
 		
 		Scanner input = new Scanner(System.in);
 		
+		int idR = 0;
+		Endereco e = new Endereco();
+		Usuario u = new Usuario();
 		Conta c = new Conta();
 		TipoReceita tr = new TipoReceita();
 		TipoDespesa td = new TipoDespesa();
@@ -96,11 +99,11 @@ public class Principal {
 							
 						System.out.println("\n------LISTA DE TIPOS DE RECEITA------\n");
 						
-						for (TipoReceita p : trecl.getLista()) {
-							System.out.println(p);
-						}   
-						 
+						System.out.println("0- Salário\n1-Variável\n2-Outro");
+						
 						r = new Receita();
+						idR++;
+						r.setIdReceita(idR);
 						
 						System.out.println("\nDigite o valor da receita: ");
 						r.setValor(input.nextDouble());
@@ -164,12 +167,10 @@ public class Principal {
 							
 							System.out.println("\n------ LISTA DE TIPOS DE DESPESAS ------\n");
 							 
-							 for (TipoDespesa p : tdesl.getLista()) {
-									System.out.println(p);
-							} 
+							System.out.println("0- Alimentação\n1- Transporte\n2- Lazer\n3- Mensalidade\n4- Vestuário\n5- Saúde\n6- Moradia\n7- Outro"); 
 							 
 							d = new Despesa();
-							 
+							
 							System.out.println("\nDigite o valor da despesa: ");
 							d.setValor(input.nextDouble());
 							input.nextLine();
@@ -188,16 +189,23 @@ public class Principal {
 							
 							desl.setLista(desl.ler());
 							
-							for (Despesa p : desl.getLista()) {
+							//remover receita
+							int i = 0;
+							for (Despesa p : desl.getLista()) {//Pecorrer igual
 								System.out.println(p);
+								
+								if(p.getIdDespesa() == 1) {//input 1
+									desl.getLista().remove(i);
+								}
+								i++;
 							}  
+							c.setLd(desl); //atualiza lista na conta
 							 
 							System.out.println("\nCadastrar mais despesas? 1 - Sim e 2 - Não");
 							int a = input.nextInt();
 							if(a == 2) {
 								break;
 							}
-							
 						}	
 					}if(od == 2) {
 							System.out.println("\nSelecione o catergoria da despesa:");
@@ -240,13 +248,31 @@ public class Principal {
 				}	
 			
 			//--------------- ok -------
-			else {
+			if(og == 3){
+				System.out.println("O que deseja fazer?\n1- Inserir ou excluir usuário\n2- Mostrar receitas e despesas da conta (incluir e excluir)");
+				int oc = input.nextInt();
 				
-				
-				
-				
-				
+				if(oc == 1) {
+					
+					u = new Usuario();
+					
+					System.out.println("Digite o nome para inserir usuário:");
+					u.setNome(input.nextLine());
+					
+					System.out.println("Digite o CPF:");
+					u.setCpf(input.nextLine());
+					
+					System.out.println("Digite o endereço:");
+					d.setTipoDespesa(tdesl.getLista().get(input.nextInt()));
+					
+				}
+					
 			}
+			
+			
+			
+			
+			
 			
 			
 		}
