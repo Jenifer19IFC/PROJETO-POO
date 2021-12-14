@@ -1,1 +1,1 @@
-[{"idReceita":1,"valor":12.0,"data":"121","tipoReceita":{"categoria":"Variável"}}]
+[{"idReceita":1,"valor":100.0,"data":"12-21-21","tipoReceita":{"categoria":"Variável"}},{"idReceita":2,"valor":200.0,"data":"21-21-21","tipoReceita":{"categoria":"Variável"}},{"idReceita":3,"valor":2.0,"data":"12-21-21","tipoReceita":{"categoria":"Variável"}}]

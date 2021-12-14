@@ -512,14 +512,14 @@ public class New {
 											if(a == 2) {
 												break;
 											}
-										}
-									 }//if or == 3
-									if(od == 4) {
-										break;
+									}
+								}//if od == 3
+								if(od == 4) {
+									break;
 								}
-								}//WhileDespesa
+							}//WhileDespesa
 							
-							}//if or == 3
+								}//if or == 3
 							if(o == 5) {//SOMAR RECEITAS E DESCONTAR DESPESAS DO SALDO
 								
 								System.out.println("Digite o ID da conta");
@@ -532,26 +532,24 @@ public class New {
 								}
 							}//if o == 5
 							
-						System.out.println("Continuar gerenciando esta conta?1- Sim 2- Não");
-						int a = input.nextInt();
+							System.out.println("Continuar gerenciando esta conta?1- Sim 2- Não");
+							int a = input.nextInt();
 						
-						if(a == 2) {
-							break;
-						}
+							if(a == 2) {
+								break;
+							}
 					
-				} //while og = 3
-				System.out.println("Voltar ao menu principal?1- Sim 2- Não");
-				int a = input.nextInt();
+					} //while og = 3
+					System.out.println("Voltar ao menu principal?1- Sim 2- Não");
+					int a = input.nextInt();
 				
-				if(a == 1) {
-					break;
-				}
+					if(a == 1) {
+						break;
+					}
 				
-			}// og == 3
-			
-			
-			
-			}//dewef
+				}// while principal og == 3
+				
+			}//if og = 3
 			
 		}//While geral
 		
