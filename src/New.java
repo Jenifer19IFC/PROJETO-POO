@@ -182,11 +182,11 @@ public class New {
 			if(og == 3) {
 				 
 				while(true) {
-					System.out.println("Digite o Id da conta:");
+					System.out.println("Digite o Id da conta: 0- Voltar ao menu");
 					int id = input.nextInt();
 							
 					while(true) { 
-						while(true) {
+						
 							System.out.println("O que deseja fazer?\n1- Adicionar usuário\n2- Excluir usuário\n3- Listar receitas\n4- Listar despesas\n"
 							+ "5- Somar receitas e descontar despesas do saldo\n6- Voltar ao menu");
 							int o = input.nextInt();
@@ -521,15 +521,32 @@ public class New {
 							
 							}//if or == 3
 							if(o == 5) {//SOMAR RECEITAS E DESCONTAR DESPESAS DO SALDO
-								System.out.println("--------------------");
-								System.out.println("\nSALDO ATUAL: R$ " + c.getSaldo());
-								System.out.println("--------------------");
+								
+								System.out.println("Digite o ID da conta");
+								int cod = input.nextInt();
+								for(int i = 0; i < cl.getLista().size(); i++) {
+						               if (cl.getLista().get(i).getIdConta() == cod) {
+						                   cl.getLista().get(i);
+						                   System.out.println("\nSALDO ATUAL: R$ " + c.getSaldo());
+						               }
+								}
 							}//if o == 5
 							
+						System.out.println("Continuar gerenciando esta conta?1- Sim 2- Não");
+						int a = input.nextInt();
+						
+						if(a == 2) {
+							break;
 						}
 					
 				} //while og = 3
-	
+				System.out.println("Voltar ao menu principal?1- Sim 2- Não");
+				int a = input.nextInt();
+				
+				if(a == 1) {
+					break;
+				}
+				
 			}// og == 3
 			
 			
