@@ -41,17 +41,17 @@ public class Receita {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Receita [idReceita=");
+		builder.append("ID Receita: ");
 		builder.append(idReceita);
-		builder.append(", valor=");
+		builder.append(" -- Valor: R$ ");
 		builder.append(valor);
-		builder.append(", data=");
+		builder.append(" -- Data: ");
 		builder.append(data);
-		builder.append(", tipoReceita=");
+		//builder.append(" -- Tipo de receita: ");
 		builder.append(tipoReceita);
-		builder.append(", toString()=");
-		builder.append(super.toString());
-		builder.append("]");
+		//builder.append(", toString()=");
+		//builder.append(super.toString());
+		//builder.append("]");
 		return builder.toString();
 	}
 	

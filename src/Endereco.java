@@ -21,11 +21,11 @@ public class Endereco {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Endereco [bairro=");
+		builder.append(" -- Bairro: ");
 		builder.append(bairro);
-		builder.append(", cidade=");
+		builder.append(" -- Cidade: ");
 		builder.append(cidade);
-		builder.append("]");
+		//builder.append("]");
 		return builder.toString();
 	}
 	

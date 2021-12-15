@@ -1,6 +1,7 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
-public class New {
+public class Menu {
 
 	public static void main(String[] args) {
 		
@@ -10,7 +11,7 @@ public class New {
 		int idD = 0;
 		int idC = 0;
 		int idU = 0;
-		//Gerencial g = new Gerencial();
+		Gerencial g = new Gerencial();
 		Endereco e = new Endereco();
 		Usuario u = new Usuario();
 		Conta c = new Conta();
@@ -25,7 +26,7 @@ public class New {
 		ListConta cl = new ListConta();
 		ListEndereco enl = new ListEndereco();
 		ListUsuario ul = new ListUsuario();
-		
+		ArrayList<Conta> contas = new ArrayList< Conta >();
 		//Receita
 		
 		tr = new TipoReceita();
@@ -124,6 +125,10 @@ public class New {
 					
 					enl.setLista(enl.ler());
 					
+				    for (Endereco p : enl.getLista()) {
+						System.out.println(p);
+					}  
+					
 					c = new Conta();
 					idC++;
 					c.setIdConta(idC);
@@ -137,7 +142,7 @@ public class New {
 					
 					cl.add(c);
 					ul.add(u);
-					c.setUsuario(u);
+					//g.setCl(cl);
 					cl.gravar();
 					ul.gravar();
 					
@@ -145,13 +150,16 @@ public class New {
 					ul.setLista(ul.ler());
 					
 					c.setUl(ul);
+					c.setUsuario(u);
+					//g.setCl(cl);//Lista de contas - gerencial
+					contas.add(c);
 					
-					System.out.println("\n------ LISTA DE CONTAS ------\n");
+					
 				    for (Conta p : cl.getLista()) {
 						System.out.println(p);
 					}   
-				    System.out.println("\n---------------------------\n");
-				    
+			
+				   //System.out.println(g);
 					System.out.println("\nDeseja inserir mais contas?1- Sim 2- Não");
 					int o = input.nextInt();
 					
@@ -164,12 +172,6 @@ public class New {
 			if(og == 2) {//EXCLUIR CONTA
 				int exC;
 				while(true) {
-					
-					System.out.println("------ LISTA DE CONTAS ------\n");
-					for (Conta p : cl.getLista()) {
-						System.out.println(p);
-					} 
-					System.out.println("\n---------------------------\n");
 					 System.out.println("Digite o ID da conta:");
 					 exC = input.nextInt();
 					
@@ -180,12 +182,6 @@ public class New {
 						}
 					}  
 					
-					 System.out.println("------ LISTA DE CONTAS ------\n");
-						for (Conta p : cl.getLista()) {
-							System.out.println(p);
-						} 
-						System.out.println("\n---------------------------\n");
-						
 					System.out.println("\nExcluir mais contas? 1- Sim e 2- Não");
 					int a = input.nextInt();
 					if(a == 2) {
@@ -197,12 +193,12 @@ public class New {
 				 
 				while(true) {
 					
-					//for (Conta p : cl.getLista()) {
-					//	System.out.println(p);
-					//} 
+					for (Conta p : cl.getLista()) {
+						System.out.println(p);
+					}
 					
-					//System.out.println("Digite o Id da conta: ");
-					//int id = input.nextInt();
+					System.out.println("Digite o Id da conta: 0- Voltar ao menu");
+					int id = input.nextInt();
 							
 					while(true) { 
 						
@@ -219,7 +215,7 @@ public class New {
 									for (Usuario p : ul.getLista()) {
 										System.out.println(p);
 									}
-									System.out.println("--------------------------");
+									
 									u = new Usuario();
 									idU++;
 									u.setIdUsuario(idU);
@@ -248,7 +244,9 @@ public class New {
 									
 									enl.setLista(enl.ler());
 									
-		 
+								    for (Endereco p : enl.getLista()) {
+										System.out.println(p);
+									}  
 								    ul.add(u);
 								    
 								    ul.gravar();
@@ -256,13 +254,10 @@ public class New {
 									ul = new ListUsuario();
 									
 									ul.setLista(ul.ler());
-									c.setUl(ul);
 									
-									System.out.println("\n-------LISTA DE USUÁRIOS--------\n");
 								    for (Usuario p : ul.getLista()) {
 										System.out.println(p);
 									}
-								    System.out.println("\n--------------------------------\n");
 								    
 								    System.out.println("Adicionar mais usuários?1- Sim 2- Não");
 								    int a = input.nextInt();
@@ -277,13 +272,6 @@ public class New {
 							if(o == 2) {//EXCLUIR USUARIO
 								
 								while(true) {
-									
-									System.out.println("\n-------LISTA DE USUÁRIOS--------\n");
-								    for (Usuario p : ul.getLista()) {
-										System.out.println(p);
-									}
-								    System.out.println("\n--------------------------------\n");
-								    
 									 System.out.println("Digite o ID dO Usuário:");
 									 int exU = input.nextInt();
 										
@@ -293,13 +281,7 @@ public class New {
 							                    ul.getLista().remove(i);
 										}
 									}  
-									c.setUl(ul);
-									 System.out.println("\n-------LISTA DE USUÁRIOS--------\n");
-									    for (Usuario p : ul.getLista()) {
-											System.out.println(p);
-										}
-									    System.out.println("\n--------------------------------\n");
-									    
+									
 									System.out.println("\nExcluir mais usuarios? 1- Sim e 2- Não");
 									int a = input.nextInt();
 									if(a == 2) {
@@ -355,14 +337,11 @@ public class New {
 												
 												l.setLista(l.ler());
 												
-												System.out.println("------ LISTA DE RECEITAS ------");
 											    for (Receita p : l.getLista()) {
 													System.out.println(p);
 												}   
-											    System.out.println("--------------------------");
 											    c.setLr(l); //atualiza lista na conta
 											    c.atualizaSaldo();
-											    
 											    
 												System.out.println("\nCadastrar mais receitas? 1 - Sim e 2 - Não");
 												int a = input.nextInt();
@@ -375,13 +354,6 @@ public class New {
 									 if(or == 2) {//EXCLUIR RECEITA
 										 
 										 while(true) {
-											 
-											 System.out.println("\n------ LISTA DE RECEITAS ------\n");
-											    for (Receita p : l.getLista()) {
-													System.out.println(p);
-												}   
-											    System.out.println("\n--------------------------\n");
-											    
 											 System.out.println("Digite o ID da receita:");
 											 int exR = input.nextInt();
 												
@@ -391,13 +363,6 @@ public class New {
 									                    l.getLista().remove(i);
 												}
 											}  
-											 
-											 System.out.println("\n------ LISTA DE RECEITAS ------\n");
-											    for (Receita p : l.getLista()) {
-													System.out.println(p);
-												}   
-											    System.out.println("\n--------------------------\n");
-											    
 											c.setLd(desl); //atualiza lista na conta
 											c.atualizaSaldo();
 											
@@ -451,11 +416,10 @@ public class New {
 									for (Despesa p : desl.getLista()) {
 										System.out.println(p);
 									}  
-									System.out.println("\n-------------------------\n");
 									c.setLd(desl); //atualiza lista na conta
 									
 									System.out.println("\nO que deseja fazer?\n1- Adicionar despesa\n2- Excluir despesa\n3- Ver despesa"
-									+ " total por categoria\n4- Voltar ao menu");
+									+ "total por categoria\n4- Voltar ao menu");
 									int od = input.nextInt();
 				
 									if(od == 1) {//ADD DESPESA
@@ -488,12 +452,9 @@ public class New {
 											
 											desl.setLista(desl.ler());
 											
-											System.out.println("\n------ LISTA DE DESPESAS ------\n");
 											for (Despesa p : desl.getLista()) {
 												System.out.println(p);
 											}  
-											System.out.println("----------------------------------");
-											
 											c.setLd(desl); //atualiza lista na conta
 											c.atualizaSaldo();
 											
@@ -507,12 +468,6 @@ public class New {
 									if(od == 2) {//EXCLUIR DESPESA
 										
 										while(true) {
-											System.out.println("\n------ LISTA DE DESPESAS ------\n");
-											for (Despesa p : desl.getLista()) {
-												System.out.println(p);
-											}  
-											System.out.println("----------------------------------");
-											
 											System.out.println("Digite o ID da despesa:");
 											int exD = input.nextInt();
 											
@@ -522,12 +477,6 @@ public class New {
 								                    desl.getLista().remove(i);
 											}
 										}  
-											System.out.println("\n------ LISTA DE DESPESAS ------\n");
-											for (Despesa p : desl.getLista()) {
-												System.out.println(p);
-											}  
-											System.out.println("----------------------------------");
-											
 											c.setLd(desl); //atualiza lista na conta
 											c.atualizaSaldo();
 											
@@ -588,14 +537,14 @@ public class New {
 								}//if or == 3
 							if(o == 5) {//SOMAR RECEITAS E DESCONTAR DESPESAS DO SALDO
 								
-								//System.out.println("Digite o ID da conta");
-								//int cod = input.nextInt();
-								//for(int i = 0; i < cl.getLista().size(); i++) {
-						       //       if (cl.getLista().get(i).getIdConta() == cod) {
-						        //           cl.getLista().get(i);
+								System.out.println("Digite o ID da conta");
+								int cod = input.nextInt();
+								for(int i = 0; i < cl.getLista().size(); i++) {
+						               if (cl.getLista().get(i).getIdConta() == cod) {
+						                   cl.getLista().get(i);
 						                   System.out.println("\nSALDO ATUAL: R$ " + c.getSaldo());
-						        //       }
-								//}
+						               }
+								}
 							}//if o == 5
 							
 							System.out.println("Continuar gerenciando esta conta?1- Sim 2- Não");

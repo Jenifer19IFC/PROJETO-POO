@@ -14,9 +14,9 @@ public class TipoReceita {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Tipo_receita [categoria=");
+		builder.append(" -- Categoria: ");
 		builder.append(categoria);
-		builder.append("]");
+		//builder.append("]");
 		return builder.toString();
 	}
 	

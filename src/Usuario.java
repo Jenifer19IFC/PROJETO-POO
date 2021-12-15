@@ -36,17 +36,17 @@ public class Usuario {
 		@Override
 		public String toString() {
 			StringBuilder builder = new StringBuilder();
-			builder.append("Usuario [idUsuario=");
+			builder.append(" -- ID Usuário: ");
 			builder.append(idUsuario);
-			builder.append(", nome=");
+			builder.append(" -- Nome: ");
 			builder.append(nome);
-			builder.append(", cpf=");
+			builder.append(" -- CPF: ");
 			builder.append(cpf);
-			builder.append(", endereco=");
+			//builder.append(" Endereço: ");
 			builder.append(endereco);
-			builder.append(", toString()=");
-			builder.append(super.toString());
-			builder.append("]");
+			//builder.append(", toString()=");
+			//builder.append(super.toString());
+			//builder.append("]");
 			return builder.toString();
 		}
 		

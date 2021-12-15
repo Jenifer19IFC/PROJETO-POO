@@ -5,14 +5,13 @@ public class Conta {
 	protected Usuario usuario;
 	private ListReceita lr;
 	private ListDespesa ld;
-	private ListUsuario lu;
-	private ListConta cl;
+	private ListUsuario ul;
 	
 	public Conta() {	
 		lr = new ListReceita();
 		ld = new ListDespesa();
-		lu = new ListUsuario();
-		cl = new ListConta();
+		ul = new ListUsuario();
+		//cl = new ListConta();
 	}
 	
 	public double getSaldo() {
@@ -44,12 +43,12 @@ public class Conta {
 		this.ld = ld;
 	}
 	
-	public ListUsuario getLu() {
-		return lu;
+	public ListUsuario getUl() {
+		return ul;
 	}
 
-	public void setLu(ListUsuario lu) {
-		this.lu = lu;
+	public void setUl(ListUsuario Ul) {
+		this.ul =Ul;
 	}
 
 	public int getIdConta() {
@@ -89,7 +88,7 @@ public class Conta {
 		return soma;
 	}
 
-	public void pesquisaConta(int id) {
+	/*public void pesquisaConta(int id) {
         if ( cl != null) {
             boolean achou = false;
             for(int i = 0; i < cl.getLista().size(); i++) {
@@ -107,25 +106,25 @@ public class Conta {
         } else {
             System.out.println("Lista vazia");
         }
-    }
+    }*/
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Conta [idConta=");
+		builder.append("ID Conta: ");
 		builder.append(idConta);
-		builder.append(", saldo=");
+		builder.append(" -- Saldo: R$ ");
 		builder.append(saldo);
-		builder.append(", usuario=");
+		//builder.append(" -- Usuário: ");
 		builder.append(usuario);
-		builder.append(", lr=");
+		/*builder.append(", lr=");
 		builder.append(lr);
 		builder.append(", ld=");
 		builder.append(ld);
-		builder.append(", lu=");
-		builder.append(lu);
+		builder.append(", ul=");
+		builder.append(ul.toString());
 		builder.append(", toString()=");
 		builder.append(super.toString());
-		builder.append("]");
+		builder.append("]");*/
 		return builder.toString();
 	}
 

@@ -39,17 +39,17 @@ public class Despesa {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Despesa [idDespesa=");
+		builder.append(" ID despesa: ");
 		builder.append(idDespesa);
-		builder.append(", valor=");
+		builder.append(" -- Valor: R$ ");
 		builder.append(valor);
-		builder.append(", data=");
+		builder.append(" -- Data: ");
 		builder.append(data);
-		builder.append(", tipoDespesa=");
+		//builder.append(" -- Tipo de despesa");
 		builder.append(tipoDespesa);
-		builder.append(", toString()=");
-		builder.append(super.toString());
-		builder.append("]");
+		//builder.append(", toString()=");
+		//builder.append(super.toString());
+		//builder.append("]");
 		return builder.toString();
 	}
 	
