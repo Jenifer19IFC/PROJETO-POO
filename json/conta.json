@@ -1,1 +1,1 @@
-[{"idConta":1,"saldo":100.0,"usuario":{"idUsuario":1,"nome":"JENIFER","cpf":"131","endereco":{"bairro":"SDF","cidade":"SDS"}},"lr":{"lista":[]},"ld":{"lista":[]},"ul":{"lista":[]}}]
+[{"idConta":1,"saldo":100.0,"usuario":{"idUsuario":1,"nome":"df","cpf":"fe","endereco":{"bairro":"e","cidade":"r"}},"lr":{"lista":[]},"ld":{"lista":[]},"ul":{"lista":[]},"contas":[]},{"idConta":2,"saldo":19.0,"usuario":{"idUsuario":2,"nome":"dsd","cpf":"fd","endereco":{"bairro":"s","cidade":"ds"}},"lr":{"lista":[]},"ld":{"lista":[]},"ul":{"lista":[]},"contas":[]}]

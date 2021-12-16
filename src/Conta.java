@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Conta {
 	
 	private int idConta;
@@ -6,12 +8,13 @@ public class Conta {
 	private ListReceita lr;
 	private ListDespesa ld;
 	private ListUsuario ul;
+	ArrayList<Conta> contas = new ArrayList<Conta>();
 	
 	public Conta() {	
 		lr = new ListReceita();
 		ld = new ListDespesa();
 		ul = new ListUsuario();
-		//cl = new ListConta();
+
 	}
 	
 	public double getSaldo() {
@@ -67,6 +70,7 @@ public class Conta {
 			saldo = saldo + lr.getLista().get(i).getValor();
 		}
 	}
+	
 	
 	public double somaPorCatDespesa(String categoria) {
 		double soma = 0;

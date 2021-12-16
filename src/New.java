@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class New {
@@ -10,7 +11,6 @@ public class New {
 		int idD = 0;
 		int idC = 0;
 		int idU = 0;
-		//Gerencial g = new Gerencial();
 		Endereco e = new Endereco();
 		Usuario u = new Usuario();
 		Conta c = new Conta();
@@ -25,6 +25,7 @@ public class New {
 		ListConta cl = new ListConta();
 		ListEndereco enl = new ListEndereco();
 		ListUsuario ul = new ListUsuario();
+		ArrayList<Conta> contas = new ArrayList<Conta>();
 		
 		//Receita
 		
@@ -127,6 +128,7 @@ public class New {
 					c = new Conta();
 					idC++;
 					c.setIdConta(idC);
+					contas.add(c);
 					
 					System.out.println("Saldo a conta:");
 					c.setSaldo(input.nextDouble());
@@ -180,6 +182,7 @@ public class New {
 						}
 					}  
 					
+					 System.out.println(contas);
 					 System.out.println("------ LISTA DE CONTAS ------\n");
 						for (Conta p : cl.getLista()) {
 							System.out.println(p);
@@ -197,12 +200,12 @@ public class New {
 				 
 				while(true) {
 					
-					//for (Conta p : cl.getLista()) {
-					//	System.out.println(p);
-					//} 
+					/*for (Conta p : cl.getLista()) {
+						System.out.println(p);
+					} 
 					
-					//System.out.println("Digite o Id da conta: ");
-					//int id = input.nextInt();
+					System.out.println("Digite o Id da conta: ");
+					int id = input.nextInt();*/
 							
 					while(true) { 
 						
@@ -210,12 +213,16 @@ public class New {
 							+ "5- Somar receitas e descontar despesas do saldo\n6- Voltar ao menu");
 							int o = input.nextInt();
 							
-							if(o == 1) {//ADD US¡RIO
+							if(o == 1) {//ADD USu¡RIO
 								
 								while(true) {
+								
+									//cl.getLista().get(id).getUl();
+									
 									
 									System.out.println("-------LISTA DE USU¡RIOS--------");
 									
+								
 									for (Usuario p : ul.getLista()) {
 										System.out.println(p);
 									}
@@ -588,14 +595,19 @@ public class New {
 								}//if or == 3
 							if(o == 5) {//SOMAR RECEITAS E DESCONTAR DESPESAS DO SALDO
 								
-								//System.out.println("Digite o ID da conta");
-								//int cod = input.nextInt();
+								System.out.println("Digite o ID da conta");
+								int cod = input.nextInt();
+								
+
 								//for(int i = 0; i < cl.getLista().size(); i++) {
 						       //       if (cl.getLista().get(i).getIdConta() == cod) {
 						        //           cl.getLista().get(i);
-						                   System.out.println("\nSALDO ATUAL: R$ " + c.getSaldo());
+						                  System.out.println("\nSALDO ATUAL: R$ " + c.getSaldo());
 						        //       }
 								//}
+								
+								
+								
 							}//if o == 5
 							
 							System.out.println("Continuar gerenciando esta conta?1- Sim 2- N„o");
